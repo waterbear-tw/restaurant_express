@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Restaurant = require("./models/restaurant");
+//載入body-parser解析新增餐廳的表單資料
+const bodyParser = require("body-parser");
 
 const exphbs = require("express-handlebars");
 const restaurant = require("./restaurant.json");
@@ -17,6 +19,8 @@ const db = mongoose.connection;
 db.on("error", () => console.log(" MongoDB connection error occurs!"));
 db.once("open", () => console.log("MongoDB connect successfully."));
 
+//設定body-parser
+app.use(bodyParser.urlencoded({ extended: true }));
 //路由設定：index頁面
 app.get("/", (req, res) => {
   Restaurant.find()
@@ -39,11 +43,23 @@ app.get("/search", (req, res) => {
     .lean()
     .then((restaurantList) => {
       const filteredList = restaurantList.filter((rest) =>
-        rest.name.toLowerCase().includes(keyword.toLocaleLowerCase())
+        rest.name.toLowerCase().includes(keyword.toLowerCase())
       );
       res.render("index", { restList: filteredList, keyword });
     })
     .catch((error) => console.log("cannot get data while searching!", error));
+});
+
+//路由設定： 新增一間餐廳
+app.get("/new", (req, res) => {
+  res.render("new");
+});
+
+app.post("/new", (req, res) => {
+  const newRestData = req.body;
+  return Restaurant.create(newRestData)
+    .then(() => res.redirect("/"))
+    .catch((error) => console.log(error));
 });
 app.listen(3000, () => {
   console.log("Server is running on http://localhost:3000");

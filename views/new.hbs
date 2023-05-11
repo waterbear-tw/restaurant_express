@@ -1,0 +1,116 @@
+<header>
+  <!-- navigation -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img
+          src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt="好。吃"
+        />
+        我的餐廳清單
+      </a>
+    </div>
+  </nav>
+  <div class="banner"></div>
+</header>
+
+<!-- form -->
+<div id="new-form-container" style="width: 50%; margin:30px auto;">
+  <form class="" action="/new" method="POST">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="餐廳名稱"
+        name="name"
+      />
+      <label for="floatingInput">餐廳名稱：</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="餐廳名稱"
+        name="name_en"
+      />
+      <label for="floatingInput">英文名稱：</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="類別"
+        name="category"
+      />
+      <label for="floatingInput">類別：</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="地址"
+        name="location"
+      />
+      <label for="floatingInput">地址：</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="電話"
+        name="phone"
+      />
+      <label for="floatingInput">電話：</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="店家圖片"
+        name="image"
+      />
+      <label for="floatingInput">店家圖片：</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Google Map"
+        name="google_map"
+      />
+      <label for="floatingInput">Google Map:</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="number"
+        step="0.1"
+        class="form-control"
+        id="floatingInput"
+        placeholder="給予評分"
+        name="rating"
+      />
+      <label for="floatingInput">給予評分：</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="描述"
+        name="description"
+      />
+      <label for="floatingInput">描述：</label>
+    </div>
+    <button type="submit">提交表單</button>
+  </form>
+</div>
