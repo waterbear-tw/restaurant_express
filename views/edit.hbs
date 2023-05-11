@@ -19,7 +19,7 @@
 
 <!-- form -->
 <div id="new-form-container" style="width: 50%; margin:30px auto;">
-  <form class="" action="/new" method="POST">
+  <form action="/edit/{{restaurant._id}}" method="POST">
     <div class="form-floating mb-3">
       <input
         type="text"
@@ -27,6 +27,7 @@
         id="floatingInput"
         placeholder="餐廳名稱"
         name="name"
+        value="{{restaurant.name}}"
       />
       <label for="floatingInput">餐廳名稱：</label>
     </div>
@@ -37,6 +38,7 @@
         id="floatingInput"
         placeholder="餐廳名稱"
         name="name_en"
+        value="{{restaurant.name_en}}"
       />
       <label for="floatingInput">英文名稱：</label>
     </div>
@@ -47,6 +49,7 @@
         id="floatingInput"
         placeholder="類別"
         name="category"
+        value="{{restaurant.category}}"
       />
       <label for="floatingInput">類別：</label>
     </div>
@@ -57,6 +60,7 @@
         id="floatingInput"
         placeholder="地址"
         name="location"
+        value="{{restaurant.location}}"
       />
       <label for="floatingInput">地址：</label>
     </div>
@@ -67,6 +71,7 @@
         id="floatingInput"
         placeholder="電話"
         name="phone"
+        value="{{restaurant.phone}}"
       />
       <label for="floatingInput">電話：</label>
     </div>
@@ -77,6 +82,7 @@
         id="floatingInput"
         placeholder="店家圖片"
         name="image"
+        value="{{restaurant.image}}"
       />
       <label for="floatingInput">店家圖片：</label>
     </div>
@@ -87,6 +93,7 @@
         id="floatingInput"
         placeholder="Google Map"
         name="google_map"
+        value="{{restaurant.name}}"
       />
       <label for="floatingInput">Google Map:</label>
     </div>
@@ -98,6 +105,7 @@
         id="floatingInput"
         placeholder="給予評分"
         name="rating"
+        value={{restaurant.rating}}
       />
       <label for="floatingInput">給予評分：</label>
     </div>
@@ -108,13 +116,12 @@
         id="floatingInput"
         placeholder="描述"
         name="description"
+        value="{{restaurant.description}}"
       />
       <label for="floatingInput">描述：</label>
     </div>
     <button type="submit">提交表單</button>
   </form>
-
-  <form class="d-inline-flex" action="/" method="" GET>
-    <button action="/">回首頁</button>
-  </form>
+  <form action="/restaurants/{{restaurant._id}}">
+    <button>回到餐廳頁</button></form>
 </div>

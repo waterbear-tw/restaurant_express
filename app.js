@@ -34,7 +34,7 @@ app.get("/restaurants/:id", (req, res) => {
   return Restaurant.findById(id)
     .lean()
     .then((restDetail) => res.render("restDetail", { restDetail }))
-    .catch((error) => console.loeg(error));
+    .catch((error) => console.log(error));
 });
 //路由設定：搜尋結果
 app.get("/search", (req, res) => {
@@ -54,7 +54,7 @@ app.get("/search", (req, res) => {
 app.get("/new", (req, res) => {
   res.render("new");
 });
-
+////提交新餐廳的表單，並加入到資料庫
 app.post("/new", (req, res) => {
   const newRestData = req.body;
   return Restaurant.create(newRestData)
@@ -73,6 +73,31 @@ app.post("/delete/:id", (req, res) => {
     .catch((error) => console.log(error));
 });
 
+//路由設定：編輯餐廳資訊
+app.get("/edit/:id", (req, res) => {
+  const id = req.params.id;
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render("edit", { restaurant }))
+    .catch((error) => console.log(error));
+});
+////變更資料庫中的餐廳資料
+app.post("/edit/:id", (req, res) => {
+  const id = req.params.id;
+  const updatedRestaurant = req.body;
+  Restaurant.findById(id)
+    .then((restaurant) => {
+      const keys = Object.keys(updatedRestaurant);
+
+      //將新資料的值帶入舊資料中
+      keys.forEach((key) => (restaurant[key] = updatedRestaurant[key]));
+      restaurant.save();
+      res.redirect(`/restaurants/${restaurant._id}`);
+    })
+    .catch((error) => console.log(error));
+});
+
+//啟動伺服器
 app.listen(3000, () => {
   console.log("Server is running on http://localhost:3000");
 });

@@ -31,7 +31,15 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
-
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="fas fa-utensils pr-2"></i>
+          店名：
+        </span>
+        {{restDetail.name}}
+        |
+        {{restDetail.name_en}}
+      </p>
       <p class="mb-1">
         <span class="text-secondary">
           <i class="fas fa-utensils pr-2"></i>
@@ -62,7 +70,20 @@
         </span>
         {{restDetail.phone}}
       </p>
-
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="fas fa-utensils pr-2"></i>
+          Google Map：
+        </span>
+        {{restDetail.google_map}}
+      </p>
+      <p class="mb-1">
+        <span class="text-secondary">
+          <i class="fas fa-utensils pr-2"></i>
+          評分：
+        </span>
+        {{restDetail.rating}}
+      </p>
       <p class="mb-5">
         {{restDetail.description}}
       </p>
