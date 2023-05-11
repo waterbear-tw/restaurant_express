@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Restaurant = require("../restaurent");
+const Restaurant = require("../restaurant");
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
