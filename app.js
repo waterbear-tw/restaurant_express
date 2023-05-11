@@ -61,6 +61,18 @@ app.post("/new", (req, res) => {
     .then(() => res.redirect("/"))
     .catch((error) => console.log(error));
 });
+
+//路由設定：刪除餐廳資料
+app.post("/delete/:id", (req, res) => {
+  const id = req.params.id;
+  return Restaurant.findById(id)
+    .then((restaurant) => {
+      restaurant.deleteOne(); //mongoose更新後採用deleteOne()而非remove()
+    })
+    .then(() => res.redirect("/"))
+    .catch((error) => console.log(error));
+});
+
 app.listen(3000, () => {
   console.log("Server is running on http://localhost:3000");
 });

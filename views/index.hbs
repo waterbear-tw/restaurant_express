@@ -38,8 +38,8 @@
             value="{{keyword}}"
           />
           <div class="input-group-append">
-            <button class="btn btn-major" type="submit" id="search-button">
-              <i class="fas fa-search">search</i>
+            <button class="btn btn-primary" type="submit" id="search-button">
+              search
             </button>
           </div>
         </div>
@@ -71,8 +71,15 @@
                 </span>
 
               </div>
+              <div class="button-container d-flex justify-content-evenly">
+                <form action="/edit/{{this._id}}" method="GET">
+                  <button class="btn btn-success">編輯餐廳</button></form>
+                <form action="/delete/{{this._id}}" method="POST">
+                  <button class="btn btn-danger">刪除餐廳</button></form>
+              </div>
             </div>
           </a>
+
         {{/each}}
       </div>
     </div>

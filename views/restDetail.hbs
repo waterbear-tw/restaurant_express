@@ -21,7 +21,13 @@
   <div class="banner"></div>
 </header>
 
-<h1 class="mb-1 restaurant-show-title">{{restDetail.name}}</h1>
+<h1 class="mb-1 restaurant-show-title d-flex">{{restDetail.name}}</h1>
+<div class="button-container d-flex d-inline flex-row-reverse">
+  <form action="/edit/{{restDetail._id}}" method="GET">
+    <button class="btn btn-success">編輯餐廳</button></form>
+  <form action="/delete/{{restDetail._id}}" method="POST">
+    <button class="btn btn-danger">刪除餐廳</button></form>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
