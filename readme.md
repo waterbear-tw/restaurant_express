@@ -1,13 +1,17 @@
 # 餐廳清單網站 ｜ Restaurant List
 
-![web screenshot](./screenshot/index.png)
-
 ## 功能
 
 - 顯示餐廳清單
+  ![web screenshot](./screenshot/index.png)
+- 搜尋餐廳
+  ![web screenshot](./screenshot/search.png)
 - 餐廳特色及基本資訊介紹
+  ![web screenshot](./screenshot/detail.png)
 - 新增餐廳並加入清單之中
+  ![web screenshot](./screenshot/new.png)
 - 編輯已加入的餐廳資訊
+  ![web screenshot](./screenshot/edit.png)
 - 刪除清單中的餐廳資訊
 
 ## 使用方式
