@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const Restaurant = require("./models/restaurent");
+
 const exphbs = require("express-handlebars");
 app.engine("hbs", exphbs.engine({ defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", "hbs");
@@ -15,7 +17,10 @@ db.on("error", () => console.log(" MongoDB connection error occurs!"));
 db.once("open", () => console.log("MongoDB connect successfully."));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  Restaurant.find()
+    .lean()
+    .then((restList) => res.render("index", { restList }))
+    .catch((error) => console.log(error));
 });
 
 app.listen(3000, () => {
