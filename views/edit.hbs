@@ -19,7 +19,7 @@
 
 <!-- form -->
 <div id="new-form-container" style="width: 50%; margin:30px auto;">
-  <form action="/edit/{{restaurant._id}}" method="POST">
+  <form action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST">
     <div class="form-floating mb-3">
       <input
         type="text"

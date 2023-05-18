@@ -13,7 +13,8 @@
         我的餐廳清單
       </a>
       <!-- add resaurant-->
-      <form action="/new" style="display:inline"><button>新增餐廳</button>
+      <form action="/restaurants/new" style="display:inline"><button
+        >新增餐廳</button>
       </form>
 
     </div>
@@ -25,7 +26,7 @@
 <div class="container search-bar">
   <div class="search-bar-outer">
     <div class="search-bar-inner">
-      <form action="/search">
+      <form action="/restaurants/search">
         <h4 class="mb-2">尋找餐廳：</h4>
         <div class="input-group">
           <input
@@ -72,9 +73,12 @@
 
               </div>
               <div class="button-container d-flex justify-content-evenly">
-                <form action="/edit/{{this._id}}" method="GET">
+                <form action="/restaurants/edit/{{this._id}}" method="GET">
                   <button class="btn btn-success">編輯餐廳</button></form>
-                <form action="/delete/{{this._id}}" method="POST">
+                <form
+                  action="/restaurants/{{this._id}}?_method=DELETE"
+                  method="POST"
+                >
                   <button class="btn btn-danger">刪除餐廳</button></form>
               </div>
             </div>

@@ -13,7 +13,8 @@
         我的餐廳清單
       </a>
       <!-- add resaurant-->
-      <form action="/new" style="display:inline"><button>新增餐廳</button>
+      <form action="/restaurants/new" style="display:inline"><button
+        >新增餐廳</button>
       </form>
     </div>
   </nav>
@@ -23,9 +24,9 @@
 
 <h1 class="mb-1 restaurant-show-title d-flex">{{restDetail.name}}</h1>
 <div class="button-container d-flex d-inline flex-row-reverse">
-  <form action="/edit/{{restDetail._id}}" method="GET">
+  <form action="/restaurants/edit/{{restDetail._id}}" method="GET">
     <button class="btn btn-success">編輯餐廳</button></form>
-  <form action="/delete/{{restDetail._id}}" method="POST">
+  <form action="/restaurants/{{restDetail._id}}?_method=DELETE" method="POST">
     <button class="btn btn-danger">刪除餐廳</button></form>
 </div>
 <div class="container">
